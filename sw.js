@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kincadence-v1';
+const CACHE_NAME = 'stayconnect-v1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
