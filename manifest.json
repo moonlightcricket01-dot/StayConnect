@@ -1,6 +1,6 @@
 {
-  "name": "KinCadence - Mindful Relationship Cadence",
-  "short_name": "KinCadence",
+  "name": "StayConnect - Mindful Relationship Cadence",
+  "short_name": "StayConnect",
   "description": "Mindfully manage call frequencies and keep relationships healthy without over-contacting.",
   "start_url": "./index.html",
   "display": "standalone",
