@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#1f2128">
   <meta name="description" content="Mindful connection manager based on psychology-backed contact spacing.">
   <link rel="manifest" href="./manifest.json">
-  <title>KinCadence</title>
+  <title>StayConnect</title>
   <style>
     :root {
       --bg-main: #121316;
@@ -236,7 +236,7 @@
 
   <div class="app-container">
     <header>
-      <h1>Kin<span>Cadence</span></h1>
+      <h1>Stay<span>Connect</span></h1>
       <span id="queue-count" class="badge">0 Calls Today</span>
     </header>
 
@@ -300,7 +300,7 @@
 
   <script>
     // --- 1. INDEXEDDB SETUP ---
-    const DB_NAME = 'KinCadenceDB';
+    const DB_NAME = 'StayConnectDB';
     const DB_VERSION = 1;
     let db = null;
 
@@ -400,7 +400,6 @@
       const badge = document.getElementById('queue-count');
       const now = new Date();
       now.setHours(23, 59, 59, 999);
-      const startOfToday = new Date().setHours(0, 0, 0, 0);
 
       const dueContacts = contacts.filter(c => c.nextCallDate <= now.getTime());
       badge.textContent = `${dueContacts.length} Call${dueContacts.length === 1 ? '' : 's'} Today`;
@@ -500,7 +499,7 @@
         notes,
         created: Date.now(),
         lastCalled: null,
-        nextCallDate: calculateNextCall(0) // Initial call queued for today
+        nextCallDate: calculateNextCall(0)
       };
 
       await addContact(newContact);
@@ -521,8 +520,8 @@
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-          .then(reg => console.log('KinCadence SW registered scope:', reg.scope))
-          .catch(err => console.error('KinCadence SW registration failed:', err));
+          .then(reg => console.log('StayConnect SW registered scope:', reg.scope))
+          .catch(err => console.error('StayConnect SW registration failed:', err));
       });
     }
   </script>
